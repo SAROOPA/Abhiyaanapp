@@ -15,7 +15,7 @@ ME19B163
 2) Workshop coordinator
 
 **Why I want to work in the team:**
-I always wished to work in a competitive team. I firmly believe working in the team will give a wonderful experience. I would like to face more challenges and finishing the tasks gives an immense pleasure.I could gain more technical knowledge by working in ABHIYAAN, one of the best competitive teams in IITM. 
+I always wished to work in a competitive team. I firmly believe working in the team will give a wonderful experience. I would like to face more challenges and gaining knowledge in return.I could gain more technical knowledge by working in ABHIYAAN, one of the best competitive teams in IITM.
 
 **RELEVANT COURSES:**
 In Institute 
