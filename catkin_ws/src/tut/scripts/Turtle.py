@@ -11,9 +11,9 @@ def callback1(data):
 def callback2(data):
 	global pose_2
 	pose_2 = data
-	calc(pose_2)
+	
                
-def calc(pose_2):
+def calc(pose_1,pose_2):
 	distance = math.sqrt( math.pow((pose_1.x - pose_2.x),2) + math.pow((pose_1.y -pose_2.y),2))
 	vel_msg.linear.x = pose_2.linear_velocity
 	vel_msg.linear.y=0
@@ -49,8 +49,9 @@ def Turtle_init():
 	rate = rospy.Rate(10)
 	
 	while not rospy.is_shutdown():
+		calc(pose_1,pose_2)
 		rate.sleep()
-		rospy.spin()
+	rospy.spin()
 
  
 if __name__ == '__main__':
