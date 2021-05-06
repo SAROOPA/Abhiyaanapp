@@ -3,11 +3,11 @@
 import math
 def Calc_swaps(n_1):
     fix= math.ceil(n_1/2) - 1
-    print("Psition of Fixed element :" ,pos[fix])
+    print("Position of Fixed element :" ,pos[fix])
     s=0
     for i in range (0,n_1):
         s = s + abs(pos[fix]-pos[i]) - abs(fix-i)
-    print("Minimum number of swaps : " ,s)    
+    print("Minimum number of swaps : " ,s)   
         
     
 def Min_swaps(a,n):
@@ -18,9 +18,14 @@ def Min_swaps(a,n):
         if(a[i]==1):
             n_1= n_1 + 1
             pos.append(i)
-    print("Number of ones :", n_1)
-    print("Position of ones :" , pos)
-    Calc_swaps(n_1)        
+    if(n_1 == 0):
+        print("No '1' is present.")
+    elif(n_1 == n):
+        print("No swap needed as all elements are '1'")
+    else:
+        print("Number of ones :", n_1)
+        print("Position of ones :" , pos)
+        Calc_swaps(n_1)        
             
             
 a=[]
