@@ -16,12 +16,14 @@ backProj = cv.calcBackProject([hsv], [0, 1], hist, [0, 180, 0, 256], 1)
 # Filtering 
 kernel = cv.getStructuringElement(cv.MORPH_ELLIPSE, (5, 5))
 fil = cv.filter2D(backProj, -1, kernel)
-threshold, result = cv.threshold(fil, 50, 255, cv.THRESH_BINARY)
+blur = cv.GaussianBlur(fil, (3,3), 0)
+threshold, result = cv.threshold(blur, 50, 255, cv.THRESH_BINARY)
+dilated = cv.dilate(result,None, iterations=6)
 
 # Finding contours
-contours, hier = cv.findContours(result, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
+contours, hier = cv.findContours(dilated, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
 for c in contours:
     x, y, w, h = cv.boundingRect(c)
     cv.rectangle(image, (x, y), (x+w, y+h), (0, 255, 0), 2)
 cv.imshow("Original image", image)
-cv.waitKey(0)
+cv.waitKey(0) 
